@@ -1,0 +1,40 @@
+%%-*-latex-*-
+
+\section{System Overview}
+
+Las centrales de generación de Cantagallo y Yariguí propiedad de Enecsa
+S.A suministran energía eléctrica a las instalaciones de perforación
+de Ecopetrol S.A en el Campo Cantagallo de la Regional Magdalena Medio.
+La ubicación geográfica del centro de generación Cantagallo es en la
+población que lleva el mismo nombre ubicada al sur del departamento de
+Bolívar (Colombia), el centro de generación de Yarigui está ubicado a
+4km en dirección de 56 grados acimutal con respecto al centro de
+generación Cantagallo atravesando el rio Magdalena cuya locación la
+hace perteneciente al departamento de Santander.
+
+El proyecto involucra la automatización de las unidades de generación de Cantagallo y Yariguí, la cual  permitirá realizar todas las funciones de supervisión, monitoreo y control de los parámetros eléctricos de ambos centros desde la estación SCADA ubicada en la Central de Yariguí, definiendo una arquitectura de red que interconecta los relés de protección, medidores de parámetros eléctricos, contadores de energía, transmisores de flujo de gas y los paneles de control de los generadores.
+
+Los generadores utilizados son QSV-91G del fabricante Cummins que operan con gas natural con capacidad de 1,75MW a tensión nominal de 13,2kV.
+
+Los motores que propulsan el generador giran a 1800 RPM. Para la sincronización de los generadores, así como para los controles de excitación, gobernador y AVR se cuenta con el sistema integrado de control de Cummins GCP. Las unidades electrónicas de este sistema son un PCS (Control AVR), una tarjeta para el control de velocidad CM700 y un PLC Premium (del fabricante Schneider Electric) encargado del manejo de entradas-salidas tanto digitales como análogas (I/O), funciones de comunicación y demás tareas de control en el generador.
+
+La central eléctrica de Cantagallo posee dos unidades de generación y la tensión de salida es reducida a 4,16kV, mientras que el centro de generación de Yariguí posee 4 unidades y ofrece a la salida una tensión elevada a 13,2kV. 
+
+Los relés de protección utilizados para cada generador y su transformador de potencia asociado son Beckwith M-3425A y adicionalmente en cada barra se encuentra un medidor ION6200 de Schneider Electric; en la salida de la línea se cuenta con un relé de protección SEPAM20 de Schneider Electric.
+
+Un medidor Landis \& Gyr en la línea de salida de cada centro de generación registra el consumo de energía eléctrica.
+
+Para el funcionamiento de los centros de generación es primordial la supervisión de los parámetros medidos en la entrada de gas (presión y flujo) la cual se realiza con un medidor ThermoScientific – Autopilot Pro.
+
+Dadas las condiciones de los centros de generación en donde la operación y control de todos los equipos y máquinas se realiza de forma manual es deseable la automatización incluyendo el control y la supervisión desde una unidad centralizada.
+
+El sistema desarrollado integra los equipos y relés existentes en las plantas de generación a un sistema de supervisión implementado en la sala de control de Yarigui, con el propósito de realizar el monitoreo y control automático remotos de los equipos y del sistema general de Cantagallo.
+
+El SCADA desarrollado integra en una red de comunicación los equipos de protección, medición eléctrica, unidades de control de los generadores, supervisión de servicios auxiliares, transformadores en patio y el medidor de gas para cada subestación.
+
+La automatización de las plantas de generación se concibe como un sistema modular abierto  mediante el uso de las interfaces, puertos y protocolos de comunicación disponibles en los equipos existentes en la planta, lo cual da robustez y facilidad de expansión al sistema.
+
+La central de generación de Cantagallo se integró al sistema de control principal a través de radios de banda ancha, conformando una red de información Ethernet, la cual permite compartir datos con la central de generación de Yarigui.
+
+La solución contempla iniciar la maniobra de resincronismo mediante contactos secos cableados  desde las salidas digitales de los PLCs. Así mismo aplica para la supervisión de alarma contra incendio, apertura de puertas de acceso al centro de generación, disparo de válvulas de gas por alta - baja presión de gas, activación de alarma de intrusos en al área y encendido y apagado de luces a voluntad del operador.
+

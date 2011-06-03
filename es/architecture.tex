@@ -1,0 +1,46 @@
+%%-*-latex-*-
+
+\section{Architecture}
+
+Automatized systems at electrical substations have a general tendency
+within their control system, here, the configuration allows to connect
+all the Smart Electrical Devices (SED, including protection relays, numeric
+transducers, energy meters, monitoring hardware, etc), keeping field controllers
+at a level higher than the rest SED.
+
+%Los sistemas automatizados de subestaciones eléctricas poseen una tendencia general en su sistema de control, en la cual la configuración permite conectar en una misma red de comunicación todos los Dispositivos Electrónicos Inteligentes (DEI, incluye relés de protección, transductores numéricos, contadores de energía, equipos de monitoreo, etc), manteniendo los controladores de campo en un nivel superior a los demás DEI.
+
+
+%% TODO: fig1 y fig2
+Figures fig1 and fig2 shows the suggested hierarchical control structure
+for generation plants. This has a distributed configuration where hardware
+and software are totally integrated to the main communication channel.
+
+%Las estructura jerárquica de control para las plantas de generación planteada es la mostrada en la , la cual tiene una configuración distribuida donde los equipos (hardware) y/o funciones y programas (software) se encuentran totalmente integrados al canal de comunicación principal.
+
+In the suggested solution an Ethernet network serves as core for all the
+communications, with an 8 ports 100BaseTX switch. Because of the location
+conditions a Radio was made available. This radio was set up in bridge mode
+using the IEEE 802.11 standard in the 2.46GHz band in order to do the remote
+link between the central control unit at Yarigui and the electrical substation
+at Cantagallo.
+
+%La solución planteada ofrece como núcleo de todas las comunicaciones del sistema una red Ethernet, con un Switch de 8 puertos 100BaseTX.Teniendo en cuenta las condiciones de ubicación geográfica, se dispuso un Radio configurado en modo bridge que utiliza el estándar 802.11 en la banda de 2,46GHz para realizar el enlace remoto desde la unidad control central en Yarigui con la subestación de Cantagallo.
+
+Un PLC Modicon Quantum almacena datos de los relés de protección de los generadores, los medidores de bahía y el relé de protección de la línea de salida. El PLC establece el enlace de comunicación con un Gateway a través de protocolo Modbus TCP/IP el cual es traducido a Modbus RTU (con capa física RS485 de 2 hilos) para la adquisición de datos de cada equipo correspondiente a cada bahía. 
+
+Para el centro de generación de Cantagallo se tiene un bus Modbus RTU con 5 nodos y para el centro de generación de Yariguí se sitúan dos Gateway uno con 6 nodos y el otro con 3, esto con el fin de obtener un intercambio rápido de datos además por simplicidad según las disposición física de los equipos. (Ver )
+
+La comunicación de las unidades de control de los generadores se realiza mediante el protocolo Modbus Plus entre el PLC Quantum y el PLC Premiun incluido en los GCPs fabricados por Cummins. Por medio de este bus se realizan solamente consultas para la supervisión del sistema. Para el control integrado que brinda la solución se utilizan tarjetas especificas del PLC Quantum con contactos secos de salidas digitales, entradas digitales o salidas analógicas relacionados con los mandos de sincronización, arranque, paradas, señalización de disparo, reset y ajuste de parámetros eléctricos en los generadores, entre otros.
+
+El sistema SCADA utilizado en el desarrollo es Vijeo Citect del fabricante Schneider Electric que integra de manera sencilla y rápida todas las comunicaciones del sistema por el predominio del protocolo Modbus en sus distintas versiones presentes en los equipos de los centros de generación. El SCADA opera en un Servidor DELL ofreciendo una respuesta estable y confiable para el control y la supervisión.
+
+Como el centro de generación de Cantagallo debe ser operado remotamente se dispuso una HMI desde la cual se pueden efectuar mandos de control y una completa supervisión de los datos en caso de necesitarse la operación local, de igual forma que en el SCADA. La HMI es una pantalla táctil Magelis Smart del fabricante Schneider Electric.
+
+Los medidores de gas ThermoScientific utilizan el protocolo Modbus Daniels sobre una interfaz serial RS232, para ello fue necesario instalar en cada bus un conversor de Ethernet a serial (Serial Server) el cual permite múltiples conexiones TCP para un mismo dispositivo serial. El software del conversor crea en el PC (o Servidor) un puerto serial virtual siendo el SCADA el que consulta directamente los datos del medidor de gas.
+
+El medidor Landis \& Gyr es integrado a la red Ethernet con un módulo de comunicación ofrecido por su fabricante, los datos de este medidor son recolectados por el propio software del dispositivo instalado en el PC Servidor.
+
+De esta forma se integra cada dispositivo electrónico presente en los centros de generación a la red de comunicación principal permitiendo una solución efectiva con enlaces estables y confiables.
+
+

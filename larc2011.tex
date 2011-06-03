@@ -1,0 +1,63 @@
+\documentclass[10pt,conference,compsocconf]{IEEEtran}
+
+% Language
+%
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyphenat}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+
+% Misc
+%
+\usepackage{xspace}
+\usepackage{url}
+
+% New commands
+%
+\newcommand{\ecopetrol}{\textsf{ECOPETROL}\xspace}
+\newcommand\fig[1]{\textsc{figure}~\ref{#1}}
+\newcommand\Fig[1]{\textsc{Figure}~\ref{#1}}
+
+% Main
+%
+\begin{document}
+
+\title{A substation automation system for the \ecopetrol power plants at Cantagallo and Yariguí}
+
+%% \author{%
+%% \IEEEauthorblockN{Jose David Tascón Vidarte}
+%% \IEEEauthorblockA{Gers S.A.\\ \url{jose.tascon@gers.com.co}}
+%% \and
+%% \IEEEauthorblockN{Héctor Fabio Flórez Londoño}
+%% \IEEEauthorblockA{Gers S.A.\\ \url{hector.florez@gers.com.co}}
+%% \and
+%% \IEEEauthorblockN{Juan Diego Tascón Vidarte}
+%% \IEEEauthorblockA{Gers S.A.\\ \url{juan.tascon@gers.com.co}}
+%% }
+
+\maketitle
+
+\input{abstract}
+
+\begin{IEEEkeywords}
+Substation automation system, power plant, industrial communication networks, distributed control systems
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+\input{system}
+\input{architecture}
+\input{software}
+\input{tests}
+\input{conclusion}
+\section*{Acknowledgement} Special thanks to all those who contributed on this development: Eduardo F. Caicedo, Luis E. Aragón, Juan M. Gers.
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,automation}
+
+\end{document}

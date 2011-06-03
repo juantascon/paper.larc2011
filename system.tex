@@ -1,0 +1,67 @@
+%%-*-latex-*-
+
+\section{System Overview}
+
+Cantagallo and Yariguí electrical generation plants are own by Enecsa S.A.
+They supply electric power to Ecopetrol S.A perforation facilities in the
+Cantagallo area in the Magdalena Medio region. Cantagallo generation
+center is geographically located in a town that shares the same name, and this
+in turn is located in the Colombian department of Bolivar. Finally, the Yariguí
+generation center is located 4km direction 56 grades azimuth regarding to
+the Cantagallo generation center across the Magdalena river located at the
+Puerto Wilches town which belongs to Colombian department of Santander.
+
+The project involves the automation of the Cantagallo and Yariguí
+generation units. It will allow to perform every supervision,
+monitoring and electrical parameters control functions for both
+electrical plants from the SCADA station located at the Yariguí
+center. Subsequently, a network architecture is defined to connect the
+protection relays, electrical parameters meters, power meters, gas
+flow transmitter and the generators control panels.
+
+The generators are QSV-91G made by Cummins~\cite{cummins:2005}, they operate 
+with natural gas with a total capacity of 1.75MW for a nominal tension 
+of 13.2KV. The motor in charge of propel the generator spins at 1500RPM and 
+generator configuration is 4 pole alternator through gearbox for 60Hz
+system frequency. A Cummins GCP integrated control has been installed 
+in order to synchronize the generators, the excitation controls, governor 
+and AVR. The electronic units of this system are a PCS (AVR control), a CM700
+board to control the speed and a Premium PLC made by Schneider Electric
+to manage the digital and analog inputs and outputs and also the
+communication functions and the rest of the generator control tasks.
+
+On the one hand the Cantagallo electrical center has two generation
+units and the output tension is reduced to 4.16KV. On the other hand
+the Yarigui electrical center has four generation units and offers
+an output tension increased to 34.5KV. The protection relays used on
+each generator and its associated transformer power are Beckwith
+M-3425A. Each bay has an Schneider Electric ION6200 meter
+and the output line has a protection relay SEPAM20 also by Schneider
+Electric. A Landys \& Gyr meter at each generation center's output
+line registers the electric power consumption. Finally, it is
+essential to supervise the gas input parameters (pressure and flow)
+for the generators to work properly, this is executed by a
+ThermoScientific – Autopilot Pro meter.
+
+Because the equipment operation and control of the generation centers
+is done manually it is necessary to automatize such processes from a
+centralized unit. The system will integrates the monitoring and automatic
+remote control of the equipment and the installed relays of both
+generation plants to a supervision system built at the Yariguí control
+room. The Substation Automation System SAS will integrate in a communication 
+network the following equipment: protection, electric metering, generators' 
+control units, auxiliary supervision services, outdoor transformers and each
+substation's gas meter. The automation must be conceived as a modular
+system providing robustness and ease of expansion and as a open system
+due to the use of the plant equipment interfaces, ports and
+protocols~\cite{neumann:2007}.
+
+The Cantagallo generation center will be linked to the main control system
+through broad band channel. In this way an information network will create 
+a communication path to share data with the Yariguí generation center.
+
+The solution includes the re-synchronization maneuver by using dry
+contacts cables from the PLCs digital output. This also applies to
+the fire alarm supervision, the opening of the generation center
+access doors, trip of the gas valves by high or low pressure,
+intruders alert alarms and lights off and on switching.

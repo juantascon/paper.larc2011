@@ -1,0 +1,26 @@
+%%-*-latex-*-
+
+\section{Running Tests}
+
+
+
+
+Las pruebas de funcionamiento del sistema implican la verificación de todos los datos de supervisión y los mandos control presentes en la HMI y en el SCADA desarrollado.
+
+Como esquema de pruebas en la supervisión se realizó  un checklist de todas las señales presentes en cada interfaz de usuario resultando satisfactorios todos los datos y presentando un tiempo de actualización promedio de un segundo en cada dato.
+
+Uno de los puntos importantes es la estabilidad del enlace de comunicación de Cantagallo que comprobó su alta eficiencia durante las pruebas de supervisión y control.
+
+Para el monitoreo de las distintas redes de comunicación presentes en el sistema se creó una pantalla especial en el SCADA la cual contiene la arquitectura de comunicación en el centro de generación y muestra el estado del enlace con cada dispositivo presente, además de ser de gran ayuda para efectos de mantenimiento o de reporte de fallos.
+
+Las pruebas de control ejecutadas y ordenadas para cada centro de generación, incluyeron las pruebas para la HMI y el SCADA de la subestación de Cantagallo. El esquema general de pruebas contempló los siguientes ítems:
+
+\begin{itemize}
+\item Pruebas de Mandos de Control por Bahía, incluyendo arranque, sincronización de barra y parada.
+\item Pruebas de Mando de Interruptor de la línea de salida: apertura y cierre.
+\item Reset de Relés de protección y enclavamiento de disparo de interruptor.
+\item Re-sincronización con la red pública (operación del centro de generación en modo Red), paso a operación en modo Isla y arranque de máquinas en barra muerta.
+\end{itemize}
+
+La señalización de los mandos de control se probó para todos los casos en conjunto, dando como resultado efectivas las pruebas de funcionamiento y visualización.
+

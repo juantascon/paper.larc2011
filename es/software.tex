@@ -1,0 +1,37 @@
+%%-*-latex-*-
+
+\section{Software}
+
+El desarrollo completo del sistema involucró la programación del PLC Quantum, la aplicación de la HMI y el software del SCADA que será el principal componente de la automatización.
+
+El esquema como se ejecutan todos los programas dentro de cada componente mencionado es mostrado en la , se observa la interacción entre el software del PLC mediante el mapa de memoria  que se utiliza para leer y escribir los datos dentro de la HMI y de igual forma dentro del SCADA.
+
+De forma intuitiva se nota el principio de funcionamiento del sistema de automatización, en el cual realiza una escritura un dato en el mapa de memoria por parte del SCADA o la IHM resultando la ejecución de un comando en al momento de iniciar un nuevo ciclo en la rutina de control.
+
+%% TODO: fig3 y fig4
+
+La rutina programa del PLC es desarrollada en Ladder y en Texto Estructurado dada la naturaleza y la función del PLC dentro del sistema. El diagrama de bloques que representa la rutina programada es mostrado en la %% \fig4.
+
+Tal como se observa en el diagrama de bloques al inicializar el PLC se definen los valores de las variables y posteriormente en la rutina se realiza la lectura de datos por medio de los canales de comunicación especificados, se realizan internamente las operaciones aritméticas para la conversión de datos y finalmente se actualizan las entradas digitales, las salidas digitales y las salidas análogas. Con esto se inicia un nuevo ciclo de operación obteniendo una ejecución confiable y una actualización de datos eficiente.
+
+Para realizar la programación de la HMI ubicada en el centro de generación Cantagallo se utiliza el software Vijeo Designer nativo para las pantallas táctiles Magelis Smart. La aplicación final cuenta con menús interactivos para la navegación, pantallas de control y supervisión de equipos, niveles de seguridad de acceso para usuarios, gráficos de tendencias y registro de alarmas activas e históricas. Una vista general de la interfaz es la de la . La HMI presenta por sencillez en la operación una similitud de manera general al SCADA.
+
+%% TODO: fig5
+
+La HMI () presenta en el diagrama unifilar una completa información de los datos al operador. De igual forma los esquemas de control semuestran por cada bahía de generador y los datos de supervisión son colectados en un grupo de pantallas de datos eléctricos y mecánicos de las máquinas.
+
+Las características programadas en el SCADA Vijeo Citect ofrecen pantallas de supervisión y control por bahía, además de la generación de reportes, informe de alarmas, gráficos de tendencias, registro de seguridad, estado del enlace de comunicación para efecto de informe de daños; todo esto bajo el cumplimiento de las necesidades planteadas inicialmente. La .a muestra el SCADA en funcionamiento en el cual se pueden operar los centros de generación.
+
+El control por bahía es el  mostrado en la .b y ofrece todos los datos eléctricos y mecánicos necesarios para la operación de los generadores. Están incluidos el arranque, parada, arranque en barra muerta y la variación de potencia entregada por el generador en modo red (sincronización del centro de generación con la red eléctrica pública).Adicionalmente presenta los reset a los distintos equipos en caso de fallas y disparos y para la sincronización de los centros de generación con la red, el disparo en caso de retorno a modo isla y la apertura y cierre del interruptor de salida.
+
+Los datos del medidor de gas son integrados en el SCADA informando al operador las condiciones de la entrada de gas a los generadores siendo esta funcionalidad de vital importancia por ser el combustible de las máquinas.
+
+La pantalla de alarmas contiene registro de alarmas activas, sumario y alarmas de hardware; cada alarma posee un nivel de prioridad y una categoría que genera un sonido dependiendo de la urgencia.
+
+La pantalla de tendencias ofrece al operador la visión de cada variable presente en los centros de generación con datos almacenados hasta por un año, además brinda todas las comodidades de visualización como cambio de ejes y de escala.
+
+Se generan reportes: de eventos, de operaciones de control efectuadas por cada operador, de seguridad de acceso al SCADA y un reporte de todas las alarmas generadas en el último año.
+
+La seguridad que juega un papel importante en todo sistema de control y supervisión está presente en el desarrollo, en este caso se crean distintos niveles de acceso para los usuarios que deseen realizar cualquier acción en el sistema, bien sea para operador, ingeniero o administrador.
+
+%% TODO: fig6

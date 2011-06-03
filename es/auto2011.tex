@@ -1,0 +1,61 @@
+\documentclass[10pt,conference,compsocconf]{IEEEtran}
+
+% Language
+%
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyphenat}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+
+% Misc
+%
+\usepackage{xspace}
+\usepackage{url}
+
+% New commands
+%
+\newcommand{\ecopetrol}{\textsf{ECOPETROL}\xspace}
+
+% Main
+%
+\begin{document}
+
+\title{A distributed system to automatize the \ecopetrol power stations at Cantagallo and Yariguí}
+
+\author{%
+\IEEEauthorblockN{Jose David Tascón Vidarte}
+\IEEEauthorblockA{Gers S.A.\\ \url{jose.tascon@gers.com.co}}
+\and
+\IEEEauthorblockN{Héctor Fabio Flórez Londoño}
+\IEEEauthorblockA{Gers S.A.\\ \url{hector.florez@gers.com.co}}
+\and
+\IEEEauthorblockN{Juan Diego Tascón Vidarte}
+\IEEEauthorblockA{Gers S.A.\\ \url{juan.tascon@gers.com.co}}
+}
+
+\maketitle
+
+\input{abstract}
+
+\begin{IEEEkeywords}
+Power stations automation, industrial communication networks, distributed control systems
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+\input{architecture}
+\input{system}
+\input{software}
+\input{tests}
+\input{conclusion}
+%% \section*{Acknowledgement} This work was supported by the Seoul R\&BD Program(10581).
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,recursion,tui}
+
+\end{document}
